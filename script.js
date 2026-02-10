@@ -37,10 +37,15 @@ function showCopySuccess(copyBtn) {
 }
 
 function generatePalette() {
-  const colors = [];
-  for (let i = 0; i < 5; i++) {
-    colors.push(generateRandomColor());
-  }
+  const baseHue = Math.floor(Math.random() * 360);
+  const colors = [
+    `hsl(${baseHue}, 70%, 60%)`,
+    `hsl(${baseHue + 180}, 70%, 60%)`,
+    `hsl(${baseHue + 30}, 70%, 65%)`,
+    `hsl(${baseHue + 210}, 70%, 50%)`,
+    `hsl(${baseHue + 15}, 70%, 75%)`,
+  ];
+
   updatePaletteDisplay(colors);
 }
 
